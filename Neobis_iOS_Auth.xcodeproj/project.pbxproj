@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12010F12B9A2417002F0566 /* AppDelegate.swift */; };
 		F12010F42B9A2417002F0566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12010F32B9A2417002F0566 /* SceneDelegate.swift */; };
-		F12010F62B9A2417002F0566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12010F52B9A2417002F0566 /* ViewController.swift */; };
-		F12010F92B9A2417002F0566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12010F72B9A2417002F0566 /* Main.storyboard */; };
+		F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12010F52B9A2417002F0566 /* LoginViewController.swift */; };
 		F12010FB2B9A2418002F0566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12010FA2B9A2418002F0566 /* Assets.xcassets */; };
 		F12010FE2B9A2418002F0566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12010FC2B9A2418002F0566 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		F12010EE2B9A2417002F0566 /* Neobis_iOS_Auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_Auth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12010F12B9A2417002F0566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12010F32B9A2417002F0566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F12010F52B9A2417002F0566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F12010F82B9A2417002F0566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F12010F52B9A2417002F0566 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F12010FA2B9A2418002F0566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F12010FD2B9A2418002F0566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F12010FF2B9A2418002F0566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,22 @@
 		F12010F02B9A2417002F0566 /* Neobis_iOS_Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F12011052B9A253B002F0566 /* View */,
 				F12010F12B9A2417002F0566 /* AppDelegate.swift */,
 				F12010F32B9A2417002F0566 /* SceneDelegate.swift */,
-				F12010F52B9A2417002F0566 /* ViewController.swift */,
-				F12010F72B9A2417002F0566 /* Main.storyboard */,
 				F12010FA2B9A2418002F0566 /* Assets.xcassets */,
 				F12010FC2B9A2418002F0566 /* LaunchScreen.storyboard */,
 				F12010FF2B9A2418002F0566 /* Info.plist */,
 			);
 			path = Neobis_iOS_Auth;
+			sourceTree = "<group>";
+		};
+		F12011052B9A253B002F0566 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F12010F52B9A2417002F0566 /* LoginViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +132,6 @@
 			files = (
 				F12010FE2B9A2418002F0566 /* LaunchScreen.storyboard in Resources */,
 				F12010FB2B9A2418002F0566 /* Assets.xcassets in Resources */,
-				F12010F92B9A2417002F0566 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12010F62B9A2417002F0566 /* ViewController.swift in Sources */,
+				F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */,
 				F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */,
 				F12010F42B9A2417002F0566 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F12010F72B9A2417002F0566 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F12010F82B9A2417002F0566 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F12010FC2B9A2418002F0566 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +293,6 @@
 				INFOPLIST_FILE = Neobis_iOS_Auth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +320,6 @@
 				INFOPLIST_FILE = Neobis_iOS_Auth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
