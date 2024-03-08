@@ -12,6 +12,12 @@
 		F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12010F52B9A2417002F0566 /* LoginViewController.swift */; };
 		F12010FB2B9A2418002F0566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12010FA2B9A2418002F0566 /* Assets.xcassets */; };
 		F12010FE2B9A2418002F0566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12010FC2B9A2418002F0566 /* LaunchScreen.storyboard */; };
+		F12011082B9A58CF002F0566 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12011072B9A58CF002F0566 /* LoginView.swift */; };
+		F120110B2B9A6A24002F0566 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F120110A2B9A6A24002F0566 /* SnapKit */; };
+		F120110D2B9A6A24002F0566 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F120110C2B9A6A24002F0566 /* SnapKit-Dynamic */; };
+		F12011162B9A979C002F0566 /* MPLUS1p-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */; };
+		F12011172B9A979C002F0566 /* MPLUS1p-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */; };
+		F12011192B9A979C002F0566 /* MPLUS1p-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,10 @@
 		F12010FA2B9A2418002F0566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F12010FD2B9A2418002F0566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F12010FF2B9A2418002F0566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F12011072B9A58CF002F0566 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Medium.ttf"; sourceTree = "<group>"; };
+		F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Black.ttf"; sourceTree = "<group>"; };
+		F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F120110B2B9A6A24002F0566 /* SnapKit in Frameworks */,
+				F120110D2B9A6A24002F0566 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +66,7 @@
 		F12010F02B9A2417002F0566 /* Neobis_iOS_Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F120110E2B9A9788002F0566 /* Fonts */,
 				F12011052B9A253B002F0566 /* View */,
 				F12010F12B9A2417002F0566 /* AppDelegate.swift */,
 				F12010F32B9A2417002F0566 /* SceneDelegate.swift */,
@@ -68,8 +81,19 @@
 			isa = PBXGroup;
 			children = (
 				F12010F52B9A2417002F0566 /* LoginViewController.swift */,
+				F12011072B9A58CF002F0566 /* LoginView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F120110E2B9A9788002F0566 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */,
+				F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */,
+				F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +112,10 @@
 			dependencies = (
 			);
 			name = Neobis_iOS_Auth;
+			packageProductDependencies = (
+				F120110A2B9A6A24002F0566 /* SnapKit */,
+				F120110C2B9A6A24002F0566 /* SnapKit-Dynamic */,
+			);
 			productName = Neobis_iOS_Auth;
 			productReference = F12010EE2B9A2417002F0566 /* Neobis_iOS_Auth.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +144,9 @@
 				Base,
 			);
 			mainGroup = F12010E52B9A2417002F0566;
+			packageReferences = (
+				F12011092B9A6A24002F0566 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F12010EF2B9A2417002F0566 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,7 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F12010FE2B9A2418002F0566 /* LaunchScreen.storyboard in Resources */,
+				F12011192B9A979C002F0566 /* MPLUS1p-Regular.ttf in Resources */,
+				F12011172B9A979C002F0566 /* MPLUS1p-Black.ttf in Resources */,
 				F12010FB2B9A2418002F0566 /* Assets.xcassets in Resources */,
+				F12011162B9A979C002F0566 /* MPLUS1p-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +178,7 @@
 			files = (
 				F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */,
 				F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */,
+				F12011082B9A58CF002F0566 /* LoginView.swift in Sources */,
 				F12010F42B9A2417002F0566 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +392,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F12011092B9A6A24002F0566 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F120110A2B9A6A24002F0566 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F12011092B9A6A24002F0566 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F120110C2B9A6A24002F0566 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F12011092B9A6A24002F0566 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F12010E62B9A2417002F0566 /* Project object */;
 }
