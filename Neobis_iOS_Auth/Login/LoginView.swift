@@ -87,7 +87,6 @@ class LoginView: UIView {
         button.setTitle("У меня еще нет аккаунта", for: .normal)
         button.titleLabel?.font = UIFont(name: "MPLUS1p-Medium", size: 16)
         button.tintColor = .black
-        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -185,8 +184,6 @@ class LoginView: UIView {
         // Handle login button tapped
     }
     
-    @objc private func signUpButtonTapped() {
-        // Handle sign up button tapped
-    }
+
 }
 

@@ -20,14 +20,15 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         
         showTopNotification()
+        buttonsTarge()
     }
     
     func buttonsTarge(){
-        loginView.registrationButton.addTarget(self, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        loginView.registrationButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
     }
     
     @objc func signInButtonTapped() {
-        let vc = RegistrationViewController(viewModel: viewModel.getViewModelToRegistrationView())
+        let vc = RegistrationViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

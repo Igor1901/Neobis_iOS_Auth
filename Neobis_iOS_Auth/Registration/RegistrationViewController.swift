@@ -9,11 +9,32 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
 
+    let loginView = RegistrationView()
+    
+    override func loadView() {
+        view = loginView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        setupNavigationBar()
     }
+
+    func setupNavigationBar() {
+        // Устанавливаем цвет стрелки "назад" в черный
+        navigationController?.navigationBar.tintColor = .black
+
+        // Создаем кастомный заголовок
+        let titleLabel = UILabel()
+        titleLabel.text = "Регистрация"
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont(name: "MPLUS1p-Medium", size: 16)
+        navigationItem.titleView = titleLabel
+        
+    }
+
+
     
 
     /*

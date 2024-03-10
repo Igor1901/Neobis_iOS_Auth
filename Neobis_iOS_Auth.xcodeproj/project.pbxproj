@@ -18,6 +18,10 @@
 		F12011162B9A979C002F0566 /* MPLUS1p-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */; };
 		F12011172B9A979C002F0566 /* MPLUS1p-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */; };
 		F12011192B9A979C002F0566 /* MPLUS1p-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */; };
+		F174E2302B9D07DA00C185B1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E22F2B9D07DA00C185B1 /* NotificationView.swift */; };
+		F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16262B9DCA9900575015 /* SecurityButton.swift */; };
+		F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */; };
+		F18B162E2B9DDE8300575015 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B162D2B9DDE8300575015 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Medium.ttf"; sourceTree = "<group>"; };
 		F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Black.ttf"; sourceTree = "<group>"; };
 		F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Regular.ttf"; sourceTree = "<group>"; };
+		F174E22F2B9D07DA00C185B1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		F18B16262B9DCA9900575015 /* SecurityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityButton.swift; sourceTree = "<group>"; };
+		F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		F18B162D2B9DDE8300575015 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,24 +74,27 @@
 		F12010F02B9A2417002F0566 /* Neobis_iOS_Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F18B162A2B9DD1B800575015 /* Registration */,
 				F120110E2B9A9788002F0566 /* Fonts */,
-				F12011052B9A253B002F0566 /* View */,
+				F12011052B9A253B002F0566 /* Login */,
 				F12010F12B9A2417002F0566 /* AppDelegate.swift */,
 				F12010F32B9A2417002F0566 /* SceneDelegate.swift */,
 				F12010FA2B9A2418002F0566 /* Assets.xcassets */,
 				F12010FC2B9A2418002F0566 /* LaunchScreen.storyboard */,
 				F12010FF2B9A2418002F0566 /* Info.plist */,
+				F174E22F2B9D07DA00C185B1 /* NotificationView.swift */,
+				F18B16262B9DCA9900575015 /* SecurityButton.swift */,
 			);
 			path = Neobis_iOS_Auth;
 			sourceTree = "<group>";
 		};
-		F12011052B9A253B002F0566 /* View */ = {
+		F12011052B9A253B002F0566 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				F12010F52B9A2417002F0566 /* LoginViewController.swift */,
 				F12011072B9A58CF002F0566 /* LoginView.swift */,
 			);
-			path = View;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F120110E2B9A9788002F0566 /* Fonts */ = {
@@ -94,6 +105,15 @@
 				F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F18B162A2B9DD1B800575015 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */,
+				F18B162D2B9DDE8300575015 /* RegistrationView.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +199,11 @@
 				F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */,
 				F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */,
 				F12011082B9A58CF002F0566 /* LoginView.swift in Sources */,
+				F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */,
+				F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */,
 				F12010F42B9A2417002F0566 /* SceneDelegate.swift in Sources */,
+				F174E2302B9D07DA00C185B1 /* NotificationView.swift in Sources */,
+				F18B162E2B9DDE8300575015 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
