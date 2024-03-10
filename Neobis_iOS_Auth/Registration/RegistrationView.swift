@@ -271,6 +271,13 @@ class RegistrationView: UIView {
             make.trailing.equalTo(-48)
         }
         
+        showHidePasswordButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-10)
+            make.centerY.equalToSuperview()
+            make.width.equalTo(32)
+            make.height.equalTo(32)
+        }
+        
         stackView.snp.makeConstraints { make in
             make.top.equalTo(passwordView.snp.bottom).offset(6)
             make.leading.trailing.equalToSuperview().inset(16)
@@ -286,6 +293,13 @@ class RegistrationView: UIView {
             make.centerY.equalToSuperview()
             make.leading.equalTo(16)
             make.trailing.equalTo(-48)
+        }
+        
+        showHideRepeatPasswordButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-10)
+            make.centerY.equalToSuperview()
+            make.width.equalTo(32)
+            make.height.equalTo(32)
         }
         
         nextButton.snp.makeConstraints { make in
