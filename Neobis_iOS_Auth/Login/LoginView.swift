@@ -32,61 +32,61 @@ class LoginView: UIView {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 12
-        //searchView.layer.borderWidth = 0.5
-        //searchView.layer.borderColor = UIColor(red: 0.762, green: 0.762, blue: 0.762, alpha: 1).cgColor
-        //searchView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        //searchView.layer.shadowOpacity = 1
-        //searchView.layer.shadowRadius = 3
-        //searchView.layer.shadowOffset = CGSize(width: 0, height: 1)
         view.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
         return view
     }()
     
     private let loginTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Enter your login here"
+        textField.placeholder = "Введи туда-сюда логин"
+        textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)
         textField.textColor = UIColor(red: 118/255, green: 118/255, blue: 118/255, alpha: 1)
         return textField
     }()
     
     lazy var passwordView: UIView = {
-        let searchView = UIView()
-        searchView.backgroundColor = .white
-        searchView.layer.cornerRadius = 5
-        searchView.layer.borderWidth = 0.5
-        searchView.layer.borderColor = UIColor(red: 0.762, green: 0.762, blue: 0.762, alpha: 1).cgColor
-        searchView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        searchView.layer.shadowOpacity = 1
-        searchView.layer.shadowRadius = 3
-        searchView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        return searchView
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 12
+        view.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
+        return view
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Password"
-        textField.borderStyle = .roundedRect
+        textField.placeholder = "Пароль (тоже введи)"
         textField.isSecureTextEntry = true
+        textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)
+        textField.textColor = UIColor(red: 118/255, green: 118/255, blue: 118/255, alpha: 1)
         return textField
     }()
     
-    private let showHidePasswordButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "eye_icon"), for: .normal)
+    
+    private let showHidePasswordButton: SecurityButton = {
+        let button = SecurityButton()
+        button.setupButton()
         button.addTarget(self, action: #selector(showHidePassword), for: .touchUpInside)
         return button
     }()
+
     
-    private let loginButton: UIButton = {
+    
+     let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Войти", for: .normal)
+        button.titleLabel?.font = UIFont(name: "MPLUS1p-Medium", size: 16)
+        button.tintColor = .white
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private let signUpButton: UIButton = {
+     let registrationButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("I don't have an account", for: .normal)
+        button.setTitle("У меня еще нет аккаунта", for: .normal)
+        button.titleLabel?.font = UIFont(name: "MPLUS1p-Medium", size: 16)
+        button.tintColor = .black
         button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -111,10 +111,11 @@ class LoginView: UIView {
         addSubview(loginView)
         loginView.addSubview(loginTextField)
         //addSubview(loginTextField)
-        addSubview(passwordTextField)
-        addSubview(showHidePasswordButton)
+        addSubview(passwordView)
+        passwordView.addSubview(passwordTextField)
+        passwordView.addSubview(showHidePasswordButton)
         addSubview(loginButton)
-        addSubview(signUpButton)
+        addSubview(registrationButton)
     }
     
     private func setupConstraints() {
@@ -137,32 +138,38 @@ class LoginView: UIView {
         }
         
         loginTextField.snp.makeConstraints { make in
-            //make.top.equalTo(welcomeLabel.snp.bottom).offset(20)
-            //make.leading.trailing.equalToSuperview().inset(20)
             make.centerY.equalToSuperview()
             make.leading.equalTo(16)
             make.trailing.equalTo(-48)
         }
         
+        passwordView.snp.makeConstraints { make in
+            make.top.equalTo(loginView.snp.bottom).offset(14)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(52)
+            
+        }
+        
         passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(loginView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(16)
+            make.trailing.equalTo(-48)
         }
         
         showHidePasswordButton.snp.makeConstraints { make in
-            make.trailing.equalTo(passwordTextField.snp.trailing)
-            make.centerY.equalTo(passwordTextField.snp.centerY)
-            make.width.equalTo(30)
-            make.height.equalTo(30)
+            make.trailing.equalTo(-8)
+            make.centerY.equalToSuperview()
+            make.width.equalTo(32)
+            make.height.equalTo(32)
         }
         
         loginButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(passwordView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
         
-        signUpButton.snp.makeConstraints { make in
+        registrationButton.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
