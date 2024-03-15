@@ -22,6 +22,12 @@
 		F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16262B9DCA9900575015 /* SecurityButton.swift */; };
 		F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */; };
 		F18B162E2B9DDE8300575015 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B162D2B9DDE8300575015 /* RegistrationView.swift */; };
+		F18B16332B9FE8ED00575015 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16322B9FE8ED00575015 /* EmailViewController.swift */; };
+		F18B16352B9FE90400575015 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16342B9FE90400575015 /* EmailView.swift */; };
+		F18B16382BA0BC8E00575015 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16372BA0BC8E00575015 /* NetworkLayer.swift */; };
+		F18B163B2BA0C5BB00575015 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B163A2BA0C5BB00575015 /* RegistrationModel.swift */; };
+		F18B163D2BA0C63700575015 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B163C2BA0C63700575015 /* AuthenticationResponse.swift */; };
+		F18B163F2BA34C7000575015 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B163E2BA34C7000575015 /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,12 @@
 		F18B16262B9DCA9900575015 /* SecurityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityButton.swift; sourceTree = "<group>"; };
 		F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		F18B162D2B9DDE8300575015 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F18B16322B9FE8ED00575015 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		F18B16342B9FE90400575015 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		F18B16372BA0BC8E00575015 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		F18B163A2BA0C5BB00575015 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		F18B163C2BA0C63700575015 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
+		F18B163E2BA34C7000575015 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,16 +86,18 @@
 		F12010F02B9A2417002F0566 /* Neobis_iOS_Auth */ = {
 			isa = PBXGroup;
 			children = (
-				F18B162A2B9DD1B800575015 /* Registration */,
+				F18B162F2B9FE88000575015 /* Extra things */,
 				F120110E2B9A9788002F0566 /* Fonts */,
+				F18B16392BA0C5B000575015 /* Model */,
+				F18B16362BA0BC7F00575015 /* NetworkLayer */,
+				F18B16302B9FE89D00575015 /* Email */,
+				F18B162A2B9DD1B800575015 /* Registration */,
 				F12011052B9A253B002F0566 /* Login */,
 				F12010F12B9A2417002F0566 /* AppDelegate.swift */,
 				F12010F32B9A2417002F0566 /* SceneDelegate.swift */,
 				F12010FA2B9A2418002F0566 /* Assets.xcassets */,
 				F12010FC2B9A2418002F0566 /* LaunchScreen.storyboard */,
 				F12010FF2B9A2418002F0566 /* Info.plist */,
-				F174E22F2B9D07DA00C185B1 /* NotificationView.swift */,
-				F18B16262B9DCA9900575015 /* SecurityButton.swift */,
 			);
 			path = Neobis_iOS_Auth;
 			sourceTree = "<group>";
@@ -112,8 +126,44 @@
 			children = (
 				F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */,
 				F18B162D2B9DDE8300575015 /* RegistrationView.swift */,
+				F18B163E2BA34C7000575015 /* RegistrationViewModel.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		F18B162F2B9FE88000575015 /* Extra things */ = {
+			isa = PBXGroup;
+			children = (
+				F174E22F2B9D07DA00C185B1 /* NotificationView.swift */,
+				F18B16262B9DCA9900575015 /* SecurityButton.swift */,
+			);
+			path = "Extra things";
+			sourceTree = "<group>";
+		};
+		F18B16302B9FE89D00575015 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				F18B16322B9FE8ED00575015 /* EmailViewController.swift */,
+				F18B16342B9FE90400575015 /* EmailView.swift */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		F18B16362BA0BC7F00575015 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F18B16372BA0BC8E00575015 /* NetworkLayer.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		F18B16392BA0C5B000575015 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F18B163A2BA0C5BB00575015 /* RegistrationModel.swift */,
+				F18B163C2BA0C63700575015 /* AuthenticationResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,13 +247,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */,
+				F18B163B2BA0C5BB00575015 /* RegistrationModel.swift in Sources */,
+				F18B16332B9FE8ED00575015 /* EmailViewController.swift in Sources */,
+				F18B163F2BA34C7000575015 /* RegistrationViewModel.swift in Sources */,
 				F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */,
 				F12011082B9A58CF002F0566 /* LoginView.swift in Sources */,
 				F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */,
+				F18B16382BA0BC8E00575015 /* NetworkLayer.swift in Sources */,
 				F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */,
 				F12010F42B9A2417002F0566 /* SceneDelegate.swift in Sources */,
 				F174E2302B9D07DA00C185B1 /* NotificationView.swift in Sources */,
 				F18B162E2B9DDE8300575015 /* RegistrationView.swift in Sources */,
+				F18B16352B9FE90400575015 /* EmailView.swift in Sources */,
+				F18B163D2BA0C63700575015 /* AuthenticationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

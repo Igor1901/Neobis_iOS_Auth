@@ -25,11 +25,23 @@ class LoginViewController: UIViewController {
     
     func buttonsTarge(){
         loginView.registrationButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        loginView.showHidePasswordButton.addTarget(self, action: #selector(showHidePassword), for: .touchUpInside)
+        loginView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
     }
     
+    // MARK: - Actions
     @objc func signInButtonTapped() {
         let vc = RegistrationViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func showHidePassword() {
+        loginView.passwordTextField.isSecureTextEntry.toggle()
+    }
+    
+    @objc private func loginButtonTapped() {
+        // Handle login button tapped
     }
     
     func showTopNotification() {

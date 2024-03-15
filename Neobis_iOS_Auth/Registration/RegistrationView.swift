@@ -8,7 +8,20 @@
 import UIKit
 import SnapKit
 
+enum ValidState {
+    case ok
+    case neutral
+    case bad
+}
+
+protocol RegistrationContentViewDelegate: AnyObject {
+    func check(password: String)
+    func nextButtonTapped(user: RegistrationModel)
+}
+
 class RegistrationView: UIView {
+    
+    weak var delegate: RegistrationContentViewDelegate?
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -28,7 +41,7 @@ class RegistrationView: UIView {
         return view
     }()
     
-    private let emailTextField: UITextField = {
+     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)!
@@ -39,7 +52,6 @@ class RegistrationView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
-        
         return textField
     }()
     
@@ -51,7 +63,7 @@ class RegistrationView: UIView {
         return view
     }()
     
-    private let loginTextField: UITextField = {
+     let loginTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)!
@@ -62,7 +74,6 @@ class RegistrationView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
-        
         return textField
     }()
     
@@ -74,7 +85,7 @@ class RegistrationView: UIView {
         return view
     }()
     
-    private let passwordTextField: UITextField = {
+     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)!
@@ -86,14 +97,12 @@ class RegistrationView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
-        
         return textField
     }()
     
-    private let showHidePasswordButton: SecurityButton = {
+     let showHidePasswordButton: SecurityButton = {
         let button = SecurityButton()
         button.setupButton()
-        button.addTarget(self, action: #selector(showHidePassword), for: .touchUpInside)
         return button
     }()
     
@@ -103,7 +112,6 @@ class RegistrationView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)!
         label.textColor = .gray
-        
         return label
     }()
     
@@ -113,7 +121,7 @@ class RegistrationView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)!
         label.textColor = .gray
-        
+
         return label
     }()
     
@@ -123,7 +131,6 @@ class RegistrationView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)!
         label.textColor = .gray
-        
         return label
     }()
     
@@ -133,16 +140,14 @@ class RegistrationView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)!
         label.textColor = .gray
-        
         return label
     }()
     
-    private let stackView: UIStackView = {
+     let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
-        
         return stack
     }()
     
@@ -154,7 +159,7 @@ class RegistrationView: UIView {
         return view
     }()
     
-    private let repeatPasswordTextField: UITextField = {
+     let repeatPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)!
@@ -166,14 +171,12 @@ class RegistrationView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
-        
         return textField
     }()
     
-    private let showHideRepeatPasswordButton: SecurityButton = {
+     let showHideRepeatPasswordButton: SecurityButton = {
         let button = SecurityButton()
         button.setupButton()
-        button.addTarget(self, action: #selector(showHideRepeatPassword), for: .touchUpInside)
         return button
     }()
     
@@ -198,6 +201,40 @@ class RegistrationView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    #warning("Придумать логику при которой будут bad values приходить при нажатии на кнопку")
+    private func setup(validLabel: UILabel, withState: ValidState) {
+        switch withState {
+        case .ok:
+            if validLabel.text?.last != "✅" {
+                validLabel.text?.append("✅")
+                validLabel.textColor = .green
+            }
+
+        case .neutral:
+            if validLabel.text?.last == "✅" || validLabel.text?.last == "❌" {
+                validLabel.text?.removeLast()
+                validLabel.textColor = .gray
+            }
+        case .bad:
+            if validLabel.text?.last != "❌" {
+                validLabel.text?.append("❌")
+                validLabel.textColor = .red
+            }
+        }
+    }
+    
+    func setupCheckValidLabels(withStates: (ValidState, ValidState, ValidState, ValidState)) {
+        let (passwordCheckLenthLabelState,
+             passwordCheckRegistrLabelState,
+             passwordCheckContainIntLabelState,
+             passwordCheckContainSpecSymbolLabelState) = withStates
+        
+        setup(validLabel: passwordLenthLabel, withState: passwordCheckLenthLabelState)
+        setup(validLabel: passwordRegistrLabel, withState: passwordCheckRegistrLabelState)
+        setup(validLabel: passwordContainIntLabel, withState: passwordCheckContainIntLabelState)
+        setup(validLabel: passwordContainSpecSymbolLabel, withState: passwordCheckContainSpecSymbolLabelState)
     }
     
     // MARK: - Setup
@@ -308,13 +345,5 @@ class RegistrationView: UIView {
             make.height.equalTo(50)
         }
         
-    }
-    
-    @objc private func showHidePassword() {
-        passwordTextField.isSecureTextEntry.toggle()
-    }
-    
-    @objc private func showHideRepeatPassword() {
-        passwordTextField.isSecureTextEntry.toggle()
     }
 }

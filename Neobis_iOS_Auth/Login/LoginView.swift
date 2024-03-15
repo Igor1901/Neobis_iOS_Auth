@@ -36,7 +36,7 @@ class LoginView: UIView {
         return view
     }()
     
-    private let loginTextField: UITextField = {
+     let loginTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Введи туда-сюда логин"
         textField.font = UIFont(name: "MPLUS1p-Medium", size: 16)
@@ -52,7 +52,7 @@ class LoginView: UIView {
         return view
     }()
     
-    private let passwordTextField: UITextField = {
+     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Пароль (тоже введи)"
         textField.isSecureTextEntry = true
@@ -62,10 +62,9 @@ class LoginView: UIView {
     }()
     
     
-    private let showHidePasswordButton: SecurityButton = {
+    let showHidePasswordButton: SecurityButton = {
         let button = SecurityButton()
         button.setupButton()
-        button.addTarget(self, action: #selector(showHidePassword), for: .touchUpInside)
         return button
     }()
 
@@ -78,7 +77,6 @@ class LoginView: UIView {
         button.tintColor = .white
         button.backgroundColor = .black
         button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -174,15 +172,7 @@ class LoginView: UIView {
         }
     }
     
-    // MARK: - Actions
     
-    @objc private func showHidePassword() {
-        passwordTextField.isSecureTextEntry.toggle()
-    }
-    
-    @objc private func loginButtonTapped() {
-        // Handle login button tapped
-    }
     
 
 }
