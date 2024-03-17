@@ -18,6 +18,8 @@
 		F12011162B9A979C002F0566 /* MPLUS1p-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */; };
 		F12011172B9A979C002F0566 /* MPLUS1p-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */; };
 		F12011192B9A979C002F0566 /* MPLUS1p-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */; };
+		F16DFE012BA5D09900C7EC55 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DFE002BA5D09900C7EC55 /* LoginModel.swift */; };
+		F174998F2BA70ABD00A7078A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174998E2BA70ABD00A7078A /* LoginViewModel.swift */; };
 		F174E2302B9D07DA00C185B1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E22F2B9D07DA00C185B1 /* NotificationView.swift */; };
 		F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16262B9DCA9900575015 /* SecurityButton.swift */; };
 		F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */; };
@@ -42,6 +44,8 @@
 		F120110F2B9A979B002F0566 /* MPLUS1p-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Medium.ttf"; sourceTree = "<group>"; };
 		F12011102B9A979B002F0566 /* MPLUS1p-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Black.ttf"; sourceTree = "<group>"; };
 		F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Regular.ttf"; sourceTree = "<group>"; };
+		F16DFE002BA5D09900C7EC55 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F174998E2BA70ABD00A7078A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F174E22F2B9D07DA00C185B1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		F18B16262B9DCA9900575015 /* SecurityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityButton.swift; sourceTree = "<group>"; };
 		F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			children = (
 				F12010F52B9A2417002F0566 /* LoginViewController.swift */,
 				F12011072B9A58CF002F0566 /* LoginView.swift */,
+				F174998E2BA70ABD00A7078A /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				F18B163A2BA0C5BB00575015 /* RegistrationModel.swift */,
 				F18B163C2BA0C63700575015 /* AuthenticationResponse.swift */,
+				F16DFE002BA5D09900C7EC55 /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,11 +257,13 @@
 				F18B16332B9FE8ED00575015 /* EmailViewController.swift in Sources */,
 				F18B163F2BA34C7000575015 /* RegistrationViewModel.swift in Sources */,
 				F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */,
+				F174998F2BA70ABD00A7078A /* LoginViewModel.swift in Sources */,
 				F12011082B9A58CF002F0566 /* LoginView.swift in Sources */,
 				F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */,
 				F18B16382BA0BC8E00575015 /* NetworkLayer.swift in Sources */,
 				F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */,
 				F12010F42B9A2417002F0566 /* SceneDelegate.swift in Sources */,
+				F16DFE012BA5D09900C7EC55 /* LoginModel.swift in Sources */,
 				F174E2302B9D07DA00C185B1 /* NotificationView.swift in Sources */,
 				F18B162E2B9DDE8300575015 /* RegistrationView.swift in Sources */,
 				F18B16352B9FE90400575015 /* EmailView.swift in Sources */,

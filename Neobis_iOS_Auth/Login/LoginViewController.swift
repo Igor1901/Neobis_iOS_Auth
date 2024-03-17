@@ -5,11 +5,14 @@
 //  Created by Игорь Пачкин on 7/3/24.
 //
 
+// LoginViewController.swift
+
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginViewModelDelegate {
 
     let loginView = LoginView()
+    var viewModel = LoginViewModel()
     
     override func loadView() {
         view = loginView
@@ -19,7 +22,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        showTopNotification()
+        viewModel.delegate = self
         buttonsTarge()
     }
     
@@ -27,7 +30,6 @@ class LoginViewController: UIViewController {
         loginView.registrationButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         loginView.showHidePasswordButton.addTarget(self, action: #selector(showHidePassword), for: .touchUpInside)
         loginView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        
     }
     
     // MARK: - Actions
@@ -40,11 +42,12 @@ class LoginViewController: UIViewController {
         loginView.passwordTextField.isSecureTextEntry.toggle()
     }
     
-    @objc private func loginButtonTapped() {
-        // Handle login button tapped
+    @objc func loginButtonTapped() {
+        viewModel.loginButtonTapped(login: loginView.loginTextField.text, password: loginView.passwordTextField.text)
     }
-    
-    func showTopNotification() {
+
+    // MARK: - LoginViewModelDelegate
+    func showTopNotification(message: String) {
         let notificationView = TopNotificationView()
         view.addSubview(notificationView)
         
@@ -72,4 +75,3 @@ class LoginViewController: UIViewController {
         }
     }
 }
-
