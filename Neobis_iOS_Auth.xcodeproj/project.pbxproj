@@ -20,6 +20,8 @@
 		F12011192B9A979C002F0566 /* MPLUS1p-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */; };
 		F16DFE012BA5D09900C7EC55 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DFE002BA5D09900C7EC55 /* LoginModel.swift */; };
 		F174998F2BA70ABD00A7078A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174998E2BA70ABD00A7078A /* LoginViewModel.swift */; };
+		F17499922BA70C2A00A7078A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17499912BA70C2A00A7078A /* SplashViewController.swift */; };
+		F17499942BA70E6200A7078A /* 123.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17499932BA70E6200A7078A /* 123.swift */; };
 		F174E2302B9D07DA00C185B1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E22F2B9D07DA00C185B1 /* NotificationView.swift */; };
 		F18B16272B9DCA9900575015 /* SecurityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B16262B9DCA9900575015 /* SecurityButton.swift */; };
 		F18B162C2B9DD1E000575015 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */; };
@@ -46,6 +48,8 @@
 		F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUS1p-Regular.ttf"; sourceTree = "<group>"; };
 		F16DFE002BA5D09900C7EC55 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		F174998E2BA70ABD00A7078A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F17499912BA70C2A00A7078A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F17499932BA70E6200A7078A /* 123.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 123.swift; sourceTree = "<group>"; };
 		F174E22F2B9D07DA00C185B1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		F18B16262B9DCA9900575015 /* SecurityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityButton.swift; sourceTree = "<group>"; };
 		F18B162B2B9DD1E000575015 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		F12010F02B9A2417002F0566 /* Neobis_iOS_Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F17499902BA70C0400A7078A /* SplashView */,
 				F18B162F2B9FE88000575015 /* Extra things */,
 				F120110E2B9A9788002F0566 /* Fonts */,
 				F18B16392BA0C5B000575015 /* Model */,
@@ -124,6 +129,15 @@
 				F12011122B9A979C002F0566 /* MPLUS1p-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F17499902BA70C0400A7078A /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				F17499912BA70C2A00A7078A /* SplashViewController.swift */,
+				F17499932BA70E6200A7078A /* 123.swift */,
+			);
+			path = SplashView;
 			sourceTree = "<group>";
 		};
 		F18B162A2B9DD1B800575015 /* Registration */ = {
@@ -255,6 +269,8 @@
 				F12010F62B9A2417002F0566 /* LoginViewController.swift in Sources */,
 				F18B163B2BA0C5BB00575015 /* RegistrationModel.swift in Sources */,
 				F18B16332B9FE8ED00575015 /* EmailViewController.swift in Sources */,
+				F17499922BA70C2A00A7078A /* SplashViewController.swift in Sources */,
+				F17499942BA70E6200A7078A /* 123.swift in Sources */,
 				F18B163F2BA34C7000575015 /* RegistrationViewModel.swift in Sources */,
 				F12010F22B9A2417002F0566 /* AppDelegate.swift in Sources */,
 				F174998F2BA70ABD00A7078A /* LoginViewModel.swift in Sources */,
