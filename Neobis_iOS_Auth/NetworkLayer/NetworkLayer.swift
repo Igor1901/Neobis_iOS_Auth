@@ -75,46 +75,7 @@ class NetworkLayer {
             }
         }.resume()
     }
-    /*
-    func login(loginCredentials: LoginModel, completion: @escaping (Result<AuthenticationResponse, Error>) -> Void) {
-        guard let url = URL(string: "\(baseURL)/login") else {
-            completion(.failure(NetworkError.invalidURL))
-            return
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let jsonData = try JSONEncoder().encode(loginCredentials)
-            request.httpBody = jsonData
-        } catch {
-            completion(.failure(NetworkError.encodingError))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                completion(.failure(NetworkError.dataNotFound))
-                print("не пришла дата с бэка")
-                return
-            }
-            
-            guard error == nil else {
-                completion(.failure(NetworkError.serverError(error?.localizedDescription ?? "Server Error")))
-                return
-            }
-            print("ошибок нет")
-            print("response:", response)
-            print("data:", data)
-            do {
-                let authResponse = try JSONDecoder().decode(AuthenticationResponse.self, from: data)
-                completion(.success(authResponse))
-            } catch {
-                completion(.failure(NetworkError.badResponse))
-            }
-        }.resume()
-    }*/
+    
     
     func login(loginCredentials: LoginModel, completion: @escaping (Result<AuthenticationResponse, Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)/login") else {
@@ -160,12 +121,7 @@ class NetworkLayer {
                 }
             }
         }.resume()
-
     }
-
-
-
-    
 }
 
 

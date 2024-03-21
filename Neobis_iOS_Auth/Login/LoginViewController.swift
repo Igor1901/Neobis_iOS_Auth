@@ -11,11 +11,13 @@ import UIKit
 
 class LoginViewController: UIViewController, LoginViewModelDelegate {
 
+    
+
     let loginView = LoginView()
     var viewModel = LoginViewModel()
     
     let networkLayer = NetworkLayer()
-    //networkLayer.delegate = self
+    
 
     
     override func loadView() {
@@ -38,15 +40,9 @@ class LoginViewController: UIViewController, LoginViewModelDelegate {
     
     // MARK: - Actions
     @objc func signInButtonTapped() {
-        //let vc = RegistrationViewController()
-        //let vc = WelcomeViewController()
-        //navigationController?.pushViewController(vc, animated: true)
+        let vc = RegistrationViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
-        let myModalViewController = EntryViewController()
-        myModalViewController.modalPresentationStyle = .fullScreen
-        self.present(myModalViewController, animated: true, completion: nil)
-
-        //present(WelcomeViewController(), animated: true)
     }
     
     @objc private func showHidePassword() {
@@ -86,23 +82,28 @@ class LoginViewController: UIViewController, LoginViewModelDelegate {
             }
         }
     }
+    
+    func didCompleteLogin() {
+        DispatchQueue.main.async {
+            let entryVC = EntryViewController()
+            entryVC.modalPresentationStyle = .fullScreen
+            self.present(entryVC, animated: true)
+        }
+    }
+
+    
 }
 
 
 extension LoginViewController: NetworkLayerDelegate {
     func didCompleteLogin(success: Bool) {
-        print("didCompleteLogin called with success: \(success)")
         if success {
-            // Переход на EntryViewController
             DispatchQueue.main.async {
                 let myModalViewController = EntryViewController()
                 myModalViewController.modalPresentationStyle = .fullScreen
-                self.present(myModalViewController, animated: true) {
-                    print("EntryViewController presented")
-                }
+                self.present(myModalViewController, animated: true)
             }
         } else {
-            // Ошибка входа, показать уведомление
             DispatchQueue.main.async {
                 self.showTopNotification(message: "Ошибка входа")
             }

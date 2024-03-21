@@ -10,6 +10,7 @@ import Foundation
 
 protocol LoginViewModelDelegate: AnyObject {
     func showTopNotification(message: String)
+    func didCompleteLogin()
 }
 
 class LoginViewModel {
@@ -39,16 +40,16 @@ class LoginViewModel {
     }
 
     func loginRequest(user: LoginModel) {
+        // Inside your LoginViewModel's loginRequest function:
         NetworkLayer.shared.login(loginCredentials: user) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let authResponse):
-                    // Действия при успешном входе
-                    print("Успешный вход")
-                case .failure(let error):
-                    // Действия при ошибке
-                    print("Ошибка при входе: \(error.localizedDescription)")
-                }
+            switch result {
+            case .success(let authResponse):
+                // If you need to save the token, do it here
+                self?.delegate?.didCompleteLogin()
+            case .failure(let error):
+                // Handle the error scenario, perhaps informing the LoginViewController to show an error message
+                //self?.delegate?.didEncounterError(error.localizedDescription)
+                print("Упс, ошибка")
             }
         }
     }
