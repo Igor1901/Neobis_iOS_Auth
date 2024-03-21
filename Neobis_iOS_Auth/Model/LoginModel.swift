@@ -8,6 +8,6 @@
 import Foundation
 
 struct LoginModel: Encodable {
-    let login: String
+    let email: String
     let password: String
 }

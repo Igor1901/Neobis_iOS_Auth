@@ -203,7 +203,7 @@ class RegistrationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    #warning("Придумать логику при которой будут bad values приходить при нажатии на кнопку")
+    
     private func setup(validLabel: UILabel, withState: ValidState) {
         switch withState {
         case .ok:

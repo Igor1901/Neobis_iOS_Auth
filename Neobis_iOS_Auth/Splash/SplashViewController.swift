@@ -10,39 +10,10 @@ import SnapKit
 
 class SplashViewController: UIViewController {
     
+    let contentView = SplashView()
+    
     override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .white
-        
-        // Добавьте любой дизайн вашего экрана загрузки
-        let welcomeLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Lorby "
-            label.textAlignment = .center
-            label.font = UIFont(name: "MPLUS1p-Black", size: 40)
-            return label
-        }()
-        
-        let logoImageView = UIImageView(image: UIImage(named: "logo"))
-        logoImageView.contentMode = .scaleAspectFit
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(welcomeLabel)
-        view.addSubview(logoImageView)
-        
-        
-        
-        
-        
-        NSLayoutConstraint.activate([
-            
-            
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 200),
-            logoImageView.heightAnchor.constraint(equalToConstant: 200)
-        ])
-        
-        self.view = view
+        view = contentView
     }
     
     override func viewDidLoad() {

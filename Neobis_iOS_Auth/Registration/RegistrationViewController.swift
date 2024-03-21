@@ -22,28 +22,7 @@ class RegistrationViewController: UIViewController {
         setupNavigationBar()
         buttonsTarge()
         contentView.delegate = self
-         
-        
-        /*let userCredentials = RegistrationModel(login: "Igor190100",
-                                                email: "altair19012001@gmail.com",
-                                                password: "Igor!11291",
-                                                passwordConfirm: "Igor!11291")
-
-        NetworkLayer.shared.register(userCredentials: userCredentials) { result in
-            print(result)
-            switch result {
-            case .success(let authResponse):
-                // Обработка успешного ответа от сервера
-                print("Успешная регистрация: \(authResponse)")
-            case .failure(let error):
-                // Обработка ошибки
-                print("Ошибка регистрации: \(error)")
-            }
-        } */
-
-        
-
-
+ 
     }
 
     func setupNavigationBar() {

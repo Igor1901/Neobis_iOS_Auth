@@ -1,5 +1,5 @@
 //
-//  123.swift
+//  SplashView.swift
 //  Neobis_iOS_Auth
 //
 //  Created by Игорь Пачкин on 17/3/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class _23: UIView {
+class SplashView: UIView {
 
 
     // MARK: - Properties
@@ -17,7 +17,7 @@ class _23: UIView {
         let label = UILabel()
         label.text = "Lorby"
         label.textAlignment = .center
-        label.font = UIFont(name: "MPLUS1p-Black", size: 40)
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 40)
         return label
     }()
     
@@ -25,7 +25,7 @@ class _23: UIView {
         let label = UILabel()
         label.text = "Твой личный репетитор"
         label.textAlignment = .center
-        label.font = UIFont(name: "MPLUS1p-Medium", size: 24)
+        label.font = UIFont(name: "MPLUS1p-Regular", size: 24)
         return label
     }()
 
@@ -42,6 +42,7 @@ class _23: UIView {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
+        backgroundColor = .white
     }
 
     required init?(coder: NSCoder) {
@@ -70,9 +71,9 @@ class _23: UIView {
         
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide).offset(24)
-            make.width.equalTo(187)
-            make.height.equalTo(194)
+            make.top.equalTo(welcomeLabel2.snp.bottom).offset(66)
+            make.width.equalTo(329.4)
+            make.height.equalTo(350)
         }
         
     }

@@ -34,7 +34,7 @@ class LoginViewModel {
             return
         }
         
-        let userCredentials = LoginModel(login: login, password: password)
+        let userCredentials = LoginModel(email: login, password: password)
         loginRequest(user: userCredentials)
     }
 
